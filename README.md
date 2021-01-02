@@ -1,27 +1,39 @@
-# WorldOfTechnology
+# World of Technology
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+This project was generated with **Angular CLI** (version 11.0.4).
 
-## Development server
+## Technologies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In this project I'm using:
 
-## Code scaffolding
+- Angular
+- Angular Universal
+- Apollo Angular
+- Marked (ngx-markdown)
+- TypeScript
+- SCSS
+- Git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup
 
-## Build
+To install this project locally clone the repository and use **npm**.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`$ npm install`
 
-## Running unit tests
+To work at **localhost:4200** in watch mode. Add `-o` flag to open automatically in your default browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`$ npm serve`
 
-## Running end-to-end tests
+To build prerender app. The outcome will be located at **/dist/browser** folder.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+`$ npm run prerender`
 
-## Further help
+## Server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+App is prerendered with **Angular Universal** which improves **SEO** a lot. For a server I'm using [Netlify](https://www.netlify.com/) service.
+
+_In real prod situation I would use Universal in SSR mode which improves SEO for dynamic CMS content. Prerender is just for demo purposes._
+
+### Favicon
+
+![Favicon](https://github.com/rawdanowiczdev/world-of-technology/blob/main/src/assets/favicon.png) Favicon created by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect/).
