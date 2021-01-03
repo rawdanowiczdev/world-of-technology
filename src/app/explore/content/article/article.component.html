@@ -1,0 +1,10 @@
+<article>
+  <header>
+    <h2 class="title">{{ title }}</h2>
+  </header>
+  <img class="image" [src]="image" />
+  <div class="text">
+    {{ text | shorten: 200 }}
+  </div>
+  <p class="read-more btn">Read more</p>
+</article>

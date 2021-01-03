@@ -5,9 +5,10 @@
   letter-spacing: 2px;
   background-color: rgba($color: #fff, $alpha: 0.6);
   color: #000;
-  border-radius: 4px;
+  border-radius: 2px;
   transition: 0.2s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     border: #fff 2px solid;

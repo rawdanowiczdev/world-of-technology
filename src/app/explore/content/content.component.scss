@@ -1,0 +1,35 @@
+.content-container {
+  display: grid;
+  gap: 20px;
+  width: 80%;
+  margin: 100px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+}
+
+@media (orientation: landscape) {
+  .content-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+  .content-container {
+    width: 70%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  .content-container {
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1280px) {
+  .content-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
