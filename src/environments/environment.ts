@@ -1,16 +1,7 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  cmsURL:
+    'https://api-eu-central-1.graphcms.com/v2/ckjhdnhd6v48i01z50ox55oxx/master',
+  authToken:
+    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE2MDk2OTM1OTIsImF1ZCI6WyJodHRwczovL2FwaS1ldS1jZW50cmFsLTEuZ3JhcGhjbXMuY29tL3YyL2NramhkbmhkNnY0OGkwMXo1MG94NTVveHgvbWFzdGVyIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC5ncmFwaGNtcy5jb20vIiwic3ViIjoiNGQ5NzM2MWUtZDdlNC00OGY2LWExNWUtZDY2MWY3ZjVmYzYzIiwianRpIjoiY2tqaGUwNHlsdmJibjAxejVkankwaGczNiJ9.w_xlNpS7GF5QlrNb26CKw7tB6zuuqZTSR7-jB7hfkGbN6UNXE7HEuzQdsT-aZTI4hia1r3VyYGwOeLlL-4Js36xDD3dgDr6SpMl34iyhBvao5gC8J9z7ZNyMzrRvi8z0DVFZLUN2rhS2FeLsNX_-GLd5IRQv-AMERxRabZIwGZVHzLSz74yDPcLCQ5lEiYX_PvCtJKx2fny2v8CoOTZdsI7Hi0EjNKoZPl-DipwoGlfO_EhUWzFq33tFz85DqUEDEevlU7ToUgxdg1Fv_ZUKvyJ-ZU3rJ-G5DzrvxlXWFNxYDkOBjby8FWRwAE3SR-fmNWJSrIYJsTNsM_hhKrMW6pVyd76HEeypDTx9ok_7u_jSbAFU7z_WbYC0TqeeNDJ5v7Bz1lRkKTtA9HLb-zsLVvXX_A4rEmzwVURsU-JDfU0Ir2yPXzBQL1Lw_9-CPIq5lAJhRaCBiitaMyoXzvu9gpzOk6DMyl3_5Jejzyg24er69gtkTynjXmY6EHIWYvj2NCqjDGigYIv6zpp0cXhkygW5N6fPE4bUs60X-_cFNuAcGL9BLfEONCeCbK1n1iwp1eDDOFmhfEdb6AsqecQyUhYDckFgXaDkLjqh6E6EaB6CSBLqRSMsSQQ_AZMLBEcexL_VUWWwQSNVS7368iSXwXtfwR7PErb-LWJtpum5NDE',
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

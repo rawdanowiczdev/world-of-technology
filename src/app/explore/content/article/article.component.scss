@@ -1,8 +1,8 @@
 @import "../../../../SCSS/variables";
 
 .article-element {
-  margin: 5px 0;
-  width: 90%;
+  margin: 10px 0;
+  width: 80%;
   color: #000;
 }
 
@@ -23,6 +23,8 @@ article {
 
   .image {
     @extend .article-element;
+
+    max-width: 250px;
   }
 
   .text {
@@ -35,7 +37,7 @@ article {
 
   .read-more {
     align-self: flex-start;
-    margin: 5px 0 5px 5%;
+    margin: 10px 0 5px 10%;
     font-size: 1em;
   }
 }

@@ -16,7 +16,6 @@
 
 @media (orientation: portrait) and (min-width: 768px) {
   .content-container {
-    width: 70%;
     grid-template-columns: 1fr 1fr;
   }
 }
