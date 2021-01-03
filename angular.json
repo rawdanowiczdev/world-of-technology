@@ -20,14 +20,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/world-of-technology",
+            "outputPath": "dist/world-of-technology/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/SCSS/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -85,7 +85,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/SCSS/styles.scss"],
             "scripts": []
           }
         },
@@ -95,7 +95,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.server.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -110,6 +111,53 @@
             "production": {
               "devServerTarget": "world-of-technology:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/world-of-technology/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "world-of-technology:build",
+            "serverTarget": "world-of-technology:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "world-of-technology:build:production",
+              "serverTarget": "world-of-technology:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "world-of-technology:build:production",
+            "serverTarget": "world-of-technology:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }

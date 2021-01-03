@@ -1,0 +1,291 @@
+@import "../../../SCSS/variables";
+
+header {
+  position: fixed;
+  width: 90%;
+  bottom: 15%;
+  left: 50%;
+  max-height: 85%;
+  transform: translateX(-50%);
+  font-weight: 300;
+  text-align: center;
+
+  .title {
+    letter-spacing: 10px;
+    color: $orange;
+  }
+
+  .text {
+    margin: 20px 0;
+    letter-spacing: 5px;
+    line-height: 1.5;
+  }
+}
+
+// Bulb animation created by Amanda Chen https://codepen.io/jrying
+$color-space: #001;
+$color-light: rgba(235, 224, 128, 1);
+$color-wire: #111;
+
+.space {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.6) translate(0, -20%);
+}
+
+.bulb {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border: $color-space 6px solid;
+  box-shadow: 0 0 1px 6px rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(-50deg);
+  animation: float 15s ease-in-out 0s infinite;
+}
+
+.light {
+  position: absolute;
+  border-radius: 50%;
+  background: $color-light;
+}
+
+.light-0 {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px 20px $color-light;
+  animation: light-0 6s ease-in-out 0s infinite;
+}
+
+.light-1 {
+  height: 65%;
+  width: 65%;
+  left: 20px;
+  animation: light-1 6s ease-in-out 0s infinite;
+}
+
+.light-2 {
+  height: 40%;
+  width: 40%;
+  left: 45px;
+  animation: light-1 6s ease-in-out 0s infinite;
+}
+
+.highlight {
+  position: absolute;
+  height: 94%;
+  width: 46%;
+  top: 6%;
+  left: 51%;
+  border-radius: 0 155px 155px 0;
+  background-image: radial-gradient(
+    circle closest-corner at -40px 50%,
+    rgba(0, 0, 0, 0) 0,
+    rgba(255, 255, 255, 0) 152px,
+    rgba(255, 255, 255, 0.5) 154px
+  );
+  transform: rotate(20deg) translate(4px, 15px);
+}
+
+.shadow {
+  position: absolute;
+  height: 145px;
+  width: 115px;
+  left: 35px;
+  top: 35%;
+  opacity: 0.2;
+  border-radius: 50%;
+  background: linear-gradient(
+    rgba($color-space, 0.1),
+    rgba($color-space, 0.55)
+  );
+  transform: rotate(-30deg);
+}
+
+.cap {
+  position: absolute;
+  left: -30px;
+  transform: rotate(90deg);
+}
+
+.cap-body {
+  width: 30px;
+  height: 80px;
+  border-radius: 22px;
+  transform: scaleX(2);
+  background: radial-gradient(
+    circle at 15px 70px,
+    #222 2px,
+    #382c22 5px,
+    #604630 7px,
+    #382c22 10px,
+    #604630 14px,
+    #382c22 15px
+  );
+}
+
+.lead {
+  position: absolute;
+  width: 3px;
+  height: 80px;
+  top: -70px;
+  background: #865;
+}
+
+.lead-1 {
+  transform: rotate(-15deg);
+  left: -5px;
+}
+
+.lead-2 {
+  transform: rotate(15deg);
+  left: 35px;
+}
+
+.wire {
+  position: absolute;
+  height: 60px;
+  width: 30px;
+  left: 19px;
+  top: 68px;
+  border-left: solid 4px $color-wire;
+  border-radius: 0 0 0 20px;
+  transform: rotate(-12deg);
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #eee;
+  box-shadow: 0 0 1px 1px #fff;
+  transform: rotate(45deg);
+}
+
+@keyframes light-0 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes light-1 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: rotate(-50deg);
+  }
+  33% {
+    transform: rotate(-44deg) translateY(12px);
+  }
+  66% {
+    transform: rotate(-47deg) translateX(12px);
+  }
+}
+
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-44deg);
+  }
+  66% {
+    transform: rotate(66deg);
+  }
+}
+
+@media (orientation: landscape) {
+  header {
+    width: 50%;
+    transform: translateX(-10%);
+  }
+
+  .space {
+    justify-content: flex-start;
+    transform: scale(0.6) translate(-20%, 0);
+  }
+}
+
+@media (orientation: portrait) and (min-width: 768px) {
+  header {
+    width: 50%;
+    bottom: 20%;
+
+    .title {
+      font-size: 60px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+  }
+
+  .space {
+    top: 5%;
+    justify-content: center;
+    transform: scale(1) translate(0, 5%);
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  header {
+    width: 50%;
+    max-width: 400px;
+    bottom: 30%;
+
+    .title {
+      font-size: 60px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+  }
+
+  .space {
+    align-items: center;
+    transform: scale(1) translate(10%, 0);
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1280px) {
+  .space {
+    align-items: center;
+    transform: scale(1.2) translate(20%, 0);
+  }
+}

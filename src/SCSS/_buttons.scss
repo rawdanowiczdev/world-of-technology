@@ -1,0 +1,17 @@
+.btn {
+  padding: 10px 15px;
+  border: #000 2px solid;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  color: #000;
+  border-radius: 4px;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    border: #fff 2px solid;
+    background-color: rgba($color: #090a0f, $alpha: 0.3);
+    color: #fff;
+  }
+}
