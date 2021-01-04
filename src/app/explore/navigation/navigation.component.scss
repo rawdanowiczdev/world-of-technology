@@ -1,25 +1,31 @@
 @import "../../../SCSS/variables";
 
-.nav-element {
-  height: 50px;
-  background-color: rgba(#fff, $alpha: 0.5);
-  border-color: transparent;
-}
-
 nav {
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
   border-radius: 2px;
+  background-color: rgba(#fff, $alpha: 0.5);
 
   .go-back {
-    @extend .nav-element;
-
+    height: 50px;
     width: 60px;
     text-align: center;
+    border: transparent 2px solid;
+
+    &:hover {
+      border: #fff 2px solid;
+      transition: 0.2s;
+      background-color: rgba($color: $dark, $alpha: 0.3);
+
+      & .go-back__icon {
+        color: #fff;
+      }
+    }
 
     &__icon {
       font-size: 50px;
+      line-height: 0.9;
       color: lighten($dark, 10%);
     }
   }
@@ -31,11 +37,12 @@ nav {
     overflow: hidden;
 
     &__input {
-      @extend .nav-element;
-
+      height: 50px;
       width: 100%;
+      border-color: transparent;
       color: $dark;
       font-size: 25px;
+      background-color: transparent;
     }
 
     &__label {
@@ -43,20 +50,19 @@ nav {
       top: 50%;
       left: 30px;
       transform: translate(0, -50%) scale(1);
-      font-size: 20px;
+      font-size: 18px;
       color: lighten($dark, 10%);
-      transition: transform 0.3s, color 0.3s;
+      transition: transform 0.25s;
       letter-spacing: 1px;
       cursor: text;
 
       &--icon {
-        font-size: 18px;
+        font-size: 15px;
         left: -25px;
       }
 
       &--active {
-        transform: translate(-100%, -40%) scale(0.1);
-        color: rgba(#fff, $alpha: 0.5);
+        transform: translate(130%, -40%) scale(0);
       }
     }
   }

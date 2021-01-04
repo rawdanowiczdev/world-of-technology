@@ -8,12 +8,16 @@
       class="search__label"
       for="search__input"
       [ngClass]="search.value !== '' ? 'search__label--active' : ''"
-      ><i class="fas fa-search search__label search__label--icon"></i>Search
-      technologies</label
+      ><i
+        class="fas fa-search search__label search__label--icon"
+        aria-hidden="true"
+      ></i
+      >Search for technologies</label
     >
     <input
       class="search__input"
       id="search__input"
+      autocomplete="off"
       type="search"
       formControlName="search"
     />

@@ -1,9 +1,19 @@
+@import "../../../SCSS/variables";
+
+.title {
+  margin: 50px auto;
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 10px;
+  color: $orange;
+}
+
 .content-container {
   display: grid;
   gap: 30px;
   width: 80%;
   max-width: 1024px;
-  margin: 100px auto;
+  margin: 0 auto 150px auto;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
