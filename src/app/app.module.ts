@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ExploreModule } from './explore/explore.module';
 import { GraphQLModule } from './explore/graphql/graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     ExploreModule,
     GraphQLModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

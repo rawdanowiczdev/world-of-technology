@@ -1,0 +1,63 @@
+@import "../../../SCSS/variables";
+
+.nav-element {
+  height: 50px;
+  background-color: rgba(#fff, $alpha: 0.5);
+  border-color: transparent;
+}
+
+nav {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 2px;
+
+  .go-back {
+    @extend .nav-element;
+
+    width: 60px;
+    text-align: center;
+
+    &__icon {
+      font-size: 50px;
+      color: lighten($dark, 10%);
+    }
+  }
+
+  .search {
+    position: relative;
+    width: calc(100% - 60px);
+    border-left: 2px solid $dark;
+    overflow: hidden;
+
+    &__input {
+      @extend .nav-element;
+
+      width: 100%;
+      color: $dark;
+      font-size: 25px;
+    }
+
+    &__label {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      transform: translate(0, -50%) scale(1);
+      font-size: 20px;
+      color: lighten($dark, 10%);
+      transition: transform 0.3s, color 0.3s;
+      letter-spacing: 1px;
+      cursor: text;
+
+      &--icon {
+        font-size: 18px;
+        left: -25px;
+      }
+
+      &--active {
+        transform: translate(-100%, -40%) scale(0.1);
+        color: rgba(#fff, $alpha: 0.5);
+      }
+    }
+  }
+}

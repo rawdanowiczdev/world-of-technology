@@ -1,0 +1,21 @@
+<nav>
+  <a class="go-back" aria-label="Go back" routerLink="">
+    <i class="fas fa-angle-left go-back__icon" aria-hidden="true"></i>
+  </a>
+
+  <form class="search" [formGroup]="searchForm">
+    <label
+      class="search__label"
+      for="search__input"
+      [ngClass]="search.value !== '' ? 'search__label--active' : ''"
+      ><i class="fas fa-search search__label search__label--icon"></i>Search
+      technologies</label
+    >
+    <input
+      class="search__input"
+      id="search__input"
+      type="search"
+      formControlName="search"
+    />
+  </form>
+</nav>
