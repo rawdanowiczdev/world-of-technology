@@ -2,11 +2,13 @@
 
 <h2 class="title">World of Technology</h2>
 
+<router-outlet></router-outlet>
+
 <div class="content-container">
-  <app-article
+  <app-article-preview
     *ngFor="let article of articles"
     [title]="article.title"
     [image]="article.image.url"
     [text]="article.text"
-  ></app-article>
+  ></app-article-preview>
 </div>

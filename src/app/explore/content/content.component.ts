@@ -1,32 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ContentService } from './content.service';
+import { Subscription } from 'rxjs';
 
-import { ARTICLES_QUERY } from '../graphql/gql';
 import { Article } from '../graphql/article';
-import { Apollo } from 'apollo-angular';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit, OnDestroy {
   articles: Article[] = [];
+  getArticles!: Subscription;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery<any>({
-        query: ARTICLES_QUERY,
-      })
-      .valueChanges.pipe(
-        map((data) => {
-          return data.data.articles;
-        })
-      )
-      .subscribe((data: Article[]) => {
+    this.contentService.fetchData();
+    this.getArticles = this.contentService.dataFromCMS.subscribe(
+      (data: Article[]) => {
         this.articles = data;
-      });
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.getArticles.unsubscribe();
   }
 }
