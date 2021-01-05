@@ -20,7 +20,7 @@ footer {
     font-size: 20px;
 
     &:hover i {
-      color: $orange;
+      color: darken($orange, 10%);
     }
   }
 }

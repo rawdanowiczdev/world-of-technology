@@ -1,20 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { Article } from '../../graphql/article';
+
 @Component({
   selector: 'app-article-preview',
   templateUrl: './article-preview.component.html',
   styleUrls: ['./article-preview.component.scss'],
 })
 export class ArticlePreviewComponent implements OnInit {
-  @Input() title!: string;
-  @Input() image!: string;
-  @Input() text!: string;
+  @Input() article!: Article;
 
   articleRoute!: string;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.articleRoute = this.title.replace(/\s+/g, '-').toLowerCase();
+    this.articleRoute = this.article.title.replace(/\s+/g, '-').toLowerCase();
   }
 }

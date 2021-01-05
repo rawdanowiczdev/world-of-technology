@@ -2,7 +2,7 @@
   <header>
     <h2 class="title">{{ article.title }}</h2>
   </header>
-  <img class="image" [src]="article.image.url" />
+  <img class="image" [src]="article.image.url" [alt]="article.title" />
   <div class="text">
     {{ article.text }}
   </div>

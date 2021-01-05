@@ -12,10 +12,11 @@ nav {
     width: 60px;
     text-align: center;
     border: transparent 2px solid;
+    border-radius: 2px;
+    transition: background-color 0.2s, border-color 0.2s;
 
     &:hover {
-      border: #fff 2px solid;
-      transition: 0.2s;
+      border: rgba(#fff, 0.8) 2px solid;
       background-color: rgba($color: $dark, $alpha: 0.3);
 
       & .go-back__icon {
@@ -24,21 +25,21 @@ nav {
     }
 
     &__icon {
-      font-size: 50px;
-      line-height: 0.9;
+      font-size: 45px;
       color: lighten($dark, 10%);
+      transition: color 0.2s;
     }
   }
 
   .search {
     position: relative;
     width: calc(100% - 60px);
-    border-left: 2px solid $dark;
     overflow: hidden;
 
     &__input {
       height: 50px;
       width: 100%;
+      padding: 0 2.5px;
       border-color: transparent;
       color: $dark;
       font-size: 25px;
