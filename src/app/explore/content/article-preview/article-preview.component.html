@@ -1,4 +1,4 @@
-<article>
+<article class="article-body">
   <header>
     <h2 class="title">{{ title }}</h2>
   </header>
@@ -6,5 +6,5 @@
   <div class="text">
     {{ text | shorten: 220 }}
   </div>
-  <a class="read-more btn">Read more</a>
+  <a class="read-more btn" [routerLink]="articleRoute">Read more</a>
 </article>

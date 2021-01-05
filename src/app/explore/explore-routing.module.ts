@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'explore',
     component: ContentComponent,
-    children: [{ path: ':article', component: ArticleComponent }],
+    children: [{ path: ':title', component: ArticleComponent }],
   },
 ];
 

@@ -13,6 +13,8 @@ export class ContentComponent implements OnInit, OnDestroy {
   articles: Article[] = [];
   getArticles!: Subscription;
 
+  exploreArticles = true;
+
   constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {

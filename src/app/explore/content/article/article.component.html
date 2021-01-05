@@ -1,1 +1,9 @@
-<p>article works!</p>
+<article class="article-body">
+  <header>
+    <h2 class="title">{{ article.title }}</h2>
+  </header>
+  <img class="image" [src]="article.image.url" />
+  <div class="text">
+    {{ article.text }}
+  </div>
+</article>

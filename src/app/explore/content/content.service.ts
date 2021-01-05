@@ -8,7 +8,6 @@ import { Article } from '../graphql/article';
 
 @Injectable({ providedIn: 'root' })
 export class ContentService {
-  articles: Article[] = [];
   dataFromCMS = new Subject<Article[]>();
 
   constructor(private apollo: Apollo) {}
@@ -24,8 +23,7 @@ export class ContentService {
         })
       )
       .subscribe((data: Article[]) => {
-        this.articles = data;
-        this.dataFromCMS.next(this.articles);
+        this.dataFromCMS.next(data);
       });
   }
 }

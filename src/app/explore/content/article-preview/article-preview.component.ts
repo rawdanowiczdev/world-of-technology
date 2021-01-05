@@ -10,7 +10,11 @@ export class ArticlePreviewComponent implements OnInit {
   @Input() image!: string;
   @Input() text!: string;
 
+  articleRoute!: string;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.articleRoute = this.title.replace(/\s+/g, '-').toLowerCase();
+  }
 }

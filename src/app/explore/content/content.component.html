@@ -2,9 +2,12 @@
 
 <h2 class="title">World of Technology</h2>
 
-<router-outlet></router-outlet>
+<router-outlet
+  (activate)="exploreArticles = false"
+  (deactivate)="exploreArticles = true"
+></router-outlet>
 
-<div class="content-container">
+<div class="content-container" *ngIf="exploreArticles">
   <app-article-preview
     *ngFor="let article of articles"
     [title]="article.title"
