@@ -7,6 +7,10 @@
   (deactivate)="exploreArticles = true"
 ></router-outlet>
 
+<div class="loader-container">
+  <div class="loader" *ngIf="fetchingData"></div>
+</div>
+
 <div class="content-container" *ngIf="exploreArticles">
   <app-article-preview
     *ngFor="let article of articles"

@@ -12,6 +12,7 @@ import { Article } from '../graphql/article';
 export class ContentComponent implements OnInit, OnDestroy {
   articles: Article[] = [];
   getArticles!: Subscription;
+  fetchingData = true;
 
   exploreArticles = true;
 
@@ -21,6 +22,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     this.contentService.fetchData();
     this.getArticles = this.contentService.dataFromCMS.subscribe(
       (data: Article[]) => {
+        this.fetchingData = false;
         this.articles = data;
       }
     );
