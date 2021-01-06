@@ -35,6 +35,7 @@ nav {
     position: relative;
     width: calc(100% - 60px);
     overflow: hidden;
+    z-index: 1;
 
     &__input {
       height: 50px;
@@ -55,7 +56,7 @@ nav {
       color: lighten($dark, 10%);
       transition: transform 0.25s;
       letter-spacing: 1px;
-      cursor: text;
+      z-index: -1;
 
       &--icon {
         font-size: 15px;

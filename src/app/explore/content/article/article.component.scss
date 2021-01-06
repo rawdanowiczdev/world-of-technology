@@ -1,6 +1,6 @@
 .article-element {
   margin: 20px 0;
-  max-width: 80%;
+  max-width: 85%;
   color: #000;
   letter-spacing: 1px;
 }
@@ -30,5 +30,6 @@ article {
     @extend .article-element;
 
     text-align: justify;
+    line-height: 1.35;
   }
 }
