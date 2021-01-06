@@ -20,7 +20,7 @@ export class ContentComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.contentService.fetchData();
-    this.getArticles = this.contentService.dataFromCMS.subscribe(
+    this.getArticles = this.contentService.updateArticles.subscribe(
       (data: Article[]) => {
         this.fetchingData = false;
         this.articles = data;

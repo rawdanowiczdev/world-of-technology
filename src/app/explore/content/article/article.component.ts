@@ -18,9 +18,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
     articleCategory: '',
   };
 
-  titleURL!: string;
-  subURL!: Subscription;
-  subData!: Subscription;
+  titleURL = '';
+  getURL!: Subscription;
+  getData!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,25 +28,26 @@ export class ArticleComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.subURL = this.route.params.subscribe((params: Params) => {
+    this.contentService.fetchData();
+
+    this.getURL = this.route.params.subscribe((params: Params) => {
       this.titleURL = params.title;
-      this.contentService.fetchData();
     });
 
-    this.subData = this.contentService.dataFromCMS.subscribe(
+    this.getData = this.contentService.updateArticles.subscribe(
       (data: Article[]) => {
-        data.forEach((article) => {
-          const articleTitle = article.title.replace(/\s+/g, '-').toLowerCase();
-          if (articleTitle === this.titleURL) {
-            this.article = article;
-          }
+        const article = data.filter((article: Article) => {
+          return (
+            article.title.replace(/\s+/g, '-').toLowerCase() === this.titleURL
+          );
         });
+        this.article = article[0];
       }
     );
   }
 
   ngOnDestroy(): void {
-    this.subURL.unsubscribe();
-    this.subData.unsubscribe();
+    this.getURL.unsubscribe();
+    this.getData.unsubscribe();
   }
 }
