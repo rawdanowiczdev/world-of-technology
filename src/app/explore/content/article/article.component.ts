@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { Article } from '../../graphql/article';
 import { ContentService } from '../content.service';
@@ -34,16 +35,18 @@ export class ArticleComponent implements OnInit, OnDestroy {
       this.titleURL = params.title;
     });
 
-    this.getData = this.contentService.updateArticles.subscribe(
-      (data: Article[]) => {
+    this.getData = this.contentService.updateArticles
+      .pipe(take(1))
+      .subscribe((data: Article[]) => {
         const article = data.filter((article: Article) => {
           return (
             article.title.replace(/\s+/g, '-').toLowerCase() === this.titleURL
           );
         });
-        this.article = article[0];
-      }
-    );
+        if (article[0]) {
+          this.article = article[0];
+        }
+      });
   }
 
   ngOnDestroy(): void {

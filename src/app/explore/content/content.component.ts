@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 import { Article } from '../graphql/article';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-content',
@@ -16,7 +17,7 @@ import { Article } from '../graphql/article';
           150,
           style({
             opacity: 0,
-            transform: 'scale(0.5)',
+            transform: 'scale(0.35)',
           })
         ),
       ]),

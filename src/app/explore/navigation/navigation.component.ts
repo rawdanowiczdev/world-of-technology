@@ -1,6 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ContentService } from '../content/content.service';
 
@@ -14,6 +14,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private builder: FormBuilder,
+    private router: Router,
     private contentService: ContentService
   ) {}
 
@@ -28,6 +29,7 @@ export class NavigationComponent implements OnInit {
   }
 
   searchArticles(): void {
+    this.router.navigate(['explore']);
     this.contentService.showSearchResults(this.search.value);
   }
 }
