@@ -1,19 +1,22 @@
 <app-navigation></app-navigation>
 
-<h2 class="title">World of Technology</h2>
+<main>
+  <h2 class="title">World of Technology</h2>
 
-<router-outlet
-  (activate)="exploreArticles = false"
-  (deactivate)="exploreArticles = true"
-></router-outlet>
+  <router-outlet
+    (activate)="exploreArticles = false"
+    (deactivate)="exploreArticles = true"
+  ></router-outlet>
 
-<div class="loader-container">
-  <div class="loader" *ngIf="fetchingData"></div>
-</div>
+  <div class="loader-container">
+    <div class="loader" *ngIf="fetchingData"></div>
+  </div>
 
-<div class="content-container" *ngIf="exploreArticles">
-  <app-article-preview
-    *ngFor="let article of articles"
-    [article]="article"
-  ></app-article-preview>
-</div>
+  <div class="content-container" *ngIf="exploreArticles">
+    <app-article-preview
+      [@search-animation]
+      *ngFor="let article of articles"
+      [article]="article"
+    ></app-article-preview>
+  </div>
+</main>
