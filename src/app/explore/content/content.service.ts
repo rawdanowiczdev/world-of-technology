@@ -22,10 +22,10 @@ export class ContentService {
         take(1),
         map((data) => {
           return data.data.articles.slice().sort((a: Article, b: Article) => {
-            if (a.title < b.title) {
+            if (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase()) {
               return -1;
             }
-            if (a.title > b.title) {
+            if (a.title.toLocaleLowerCase() > b.title.toLocaleLowerCase()) {
               return 1;
             }
             return 0;

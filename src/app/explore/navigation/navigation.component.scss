@@ -1,11 +1,17 @@
 @import "../../../SCSS/variables";
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
   border-radius: 2px;
-  background-color: rgba(#fff, $alpha: 0.5);
+  background-color: rgba(#fff, $alpha: 0.55);
+  border-bottom: 2px rgba($color: $dark, $alpha: 0.9) solid;
+  transition: transform 0.2s;
 
   .go-back {
     height: 50px;
@@ -40,7 +46,7 @@ nav {
     &__input {
       height: 50px;
       width: 100%;
-      padding: 0 2.5px;
+      padding: 0 25px;
       border-color: transparent;
       color: $dark;
       font-size: 25px;
@@ -58,14 +64,21 @@ nav {
       letter-spacing: 1px;
       z-index: -1;
 
-      &--icon {
-        font-size: 15px;
-        left: -25px;
-      }
-
       &--active {
         transform: translate(130%, -40%) scale(0);
       }
     }
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: lighten($dark, 10%);
+    }
   }
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
 }
