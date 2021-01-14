@@ -51,6 +51,10 @@ nav {
       color: $dark;
       font-size: 25px;
       background-color: transparent;
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
     }
 
     &__label {

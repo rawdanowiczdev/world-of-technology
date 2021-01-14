@@ -5,15 +5,23 @@ markdown {
   p,
   em,
   strong {
-    margin: 5px auto;
-    display: flex;
-    justify-content: center;
     color: #000;
+    margin: 5px auto;
+  }
+
+  ul {
+    align-self: flex-start;
+
+    li {
+      color: #000;
+      list-style: disc;
+    }
   }
 
   img {
     margin: 15px auto;
     max-height: 420px;
     max-width: 85%;
+    border-radius: 4px;
   }
 }
