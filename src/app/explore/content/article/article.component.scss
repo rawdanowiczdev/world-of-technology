@@ -10,10 +10,7 @@ article {
   width: 90%;
   max-width: 1024px;
   margin: 0 auto 150px auto;
-
-  img {
-    max-height: 320px;
-  }
+  color: #000 !important;
 
   .title {
     @extend .article-element;
@@ -24,12 +21,11 @@ article {
 
   .image {
     @extend .article-element;
+
+    max-height: 320px;
   }
 
   .text {
     @extend .article-element;
-
-    text-align: justify;
-    line-height: 1.35;
   }
 }

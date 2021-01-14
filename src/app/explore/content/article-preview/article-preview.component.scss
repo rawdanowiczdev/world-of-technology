@@ -6,6 +6,8 @@
 }
 
 article {
+  outline-color: inherit;
+
   .title {
     @extend .article-element;
 

@@ -7,6 +7,7 @@ import { ExploreRoutingModule } from './explore-routing.module';
 import { ArticlePreviewComponent } from './content/article-preview/article-preview.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ArticleComponent } from './content/article/article.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,11 @@ import { ArticleComponent } from './content/article/article.component';
     NavigationComponent,
     ArticleComponent,
   ],
-  imports: [SharedModule, ExploreRoutingModule, ReactiveFormsModule],
+  imports: [
+    SharedModule,
+    ExploreRoutingModule,
+    ReactiveFormsModule,
+    MarkdownModule,
+  ],
 })
 export class ExploreModule {}

@@ -1,0 +1,19 @@
+markdown {
+  text-align: justify;
+  line-height: 1.35;
+
+  p,
+  em,
+  strong {
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    color: #000;
+  }
+
+  img {
+    margin: 15px auto;
+    max-height: 420px;
+    max-width: 85%;
+  }
+}
