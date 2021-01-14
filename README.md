@@ -1,6 +1,18 @@
-# STILL IN PROGRESS World of Technology
+# World of Technology
 
 My fourth project created with **Angular CLI** (version 11.0.4). It's a blog-like website with dynamic content fetched from GraphCMS.
+
+## Technologies
+
+In this project I'm using:
+
+- Angular
+- Angular Universal
+- Apollo Angular
+- Marked (ngx-markdown)
+- TypeScript
+- SCSS
+- Git
 
 ## CMS + Apollo
 
@@ -17,18 +29,6 @@ After that I'm able to add **Content** by simply pressing *Create New*.
 After adding new content I'm able to manage and edit my **Articles** in the list.
 
 <img src="https://media.graphcms.com/output=format:jpg/resize=,height:800,fit:max/uofsIqRFST6iJ0NlxEHg" alt="Articles list">
-
-## Technologies
-
-In this project I'm using:
-
-- Angular
-- Angular Universal
-- Apollo Angular
-- Marked (ngx-markdown)
-- TypeScript
-- SCSS
-- Git
 
 ## Setup
 
