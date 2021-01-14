@@ -21,25 +21,7 @@
   width: 90%;
   max-width: 1024px;
   margin: 0 auto 150px auto;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-auto-rows: 1fr;
   justify-content: center;
-}
-
-@media (orientation: landscape) {
-  .content-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 768px) {
-  .content-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 1280px) {
-  .content-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }

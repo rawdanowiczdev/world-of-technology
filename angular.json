@@ -26,10 +26,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/assets"],
-            "styles": ["src/SCSS/styles.scss"],
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/SCSS/styles.scss"
+            ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["graphql-tag", "zen-observable"]
+            "allowedCommonJsDependencies": [
+              "graphql-tag",
+              "zen-observable"
+            ]
           },
           "configurations": {
             "production": {
@@ -85,8 +92,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/assets"],
-            "styles": ["src/SCSS/styles.scss"],
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/SCSS/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -99,7 +110,9 @@
               "e2e/tsconfig.json",
               "tsconfig.server.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -153,7 +166,9 @@
           "options": {
             "browserTarget": "world-of-technology:build:production",
             "serverTarget": "world-of-technology:server:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -162,5 +177,8 @@
       }
     }
   },
-  "defaultProject": "world-of-technology"
+  "defaultProject": "world-of-technology",
+  "cli": {
+    "analytics": "373ded24-ada1-474e-a682-2b83cd50c59d"
+  }
 }

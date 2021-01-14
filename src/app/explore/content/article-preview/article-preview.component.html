@@ -1,10 +1,11 @@
 <article class="article-body">
-  <header>
-    <h2 class="title">{{ article.title }}</h2>
-  </header>
+  <h2 class="title">{{ article.title }}</h2>
+
   <img class="image" [src]="article.image.url" [alt]="article.title" />
-  <div class="text">
+
+  <p class="text">
     {{ article.text | shorten: 220 }}
-  </div>
+  </p>
+
   <a class="read-more btn" [routerLink]="articleRoute">Read more</a>
 </article>
